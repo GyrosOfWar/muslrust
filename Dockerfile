@@ -34,7 +34,7 @@ RUN apt-get update && apt-get install -y \
 
 
 # Install rust (old fashioned way to avoid unnecessary rustup.rs shenanigans)
-ARG CHANNEL="nightly"
+ARG CHANNEL="stable"
 ARG NIGHTLY_SNAPSHOT=""
 RUN if test "${NIGHTLY_SNAPSHOT}"; then DATEARG="--date=${NIGHTLY_SNAPSHOT}"; fi &&\
   curl https://static.rust-lang.org/rustup.sh | sh -s -- \
